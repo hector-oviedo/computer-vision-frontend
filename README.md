@@ -1,4 +1,4 @@
-# Computer Vision (fRONTEND) Module for IU University - Research Project
+# Computer Vision (FRONTEND) Module for IU University - Research Project
 This project is a React application built with Next.js and Tailwind CSS, focused on providing a comparison tool for various computer vision models using frontend components. The goal is to visualize inference data (including object detection and segmentation) of different models by comparing their performance and results using widgets, charts, and frame-by-frame views.
 
 ## Project Overview
