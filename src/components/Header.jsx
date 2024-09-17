@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    dispatch(loadConfigFromLocalStorage());
+    //dispatch(loadConfigFromLocalStorage());
   }, [dispatch]);
 
   return (

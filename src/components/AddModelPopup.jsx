@@ -1,23 +1,17 @@
 // src/components/AddModelPopup.jsx
-"use client";
-
-import React, { useState, useContext } from 'react';
-import { ModelDataContext } from '../contexts/ModelDataContext';
+import React, { useState } from 'react';
 
 const AddModelPopup = ({ isOpen, onClose, onAddModel }) => {
   const [modelName, setModelName] = useState('');
   const [jsonFile, setJsonFile] = useState(null);
   const [jsonData, setJsonData] = useState(null);
-  const [framesFolderPath, setFramesFolderPath] = useState('');
-
-  const { addModelData } = useContext(ModelDataContext);
 
   const handleJsonFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setJsonFile(file);
       setModelName(file.name);
-  
+
       // Read the file content
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -33,30 +27,20 @@ const AddModelPopup = ({ isOpen, onClose, onAddModel }) => {
       };
       reader.readAsText(file);
     }
-  };  
-
-  const handleFramesFolderChange = (event) => {
-    const files = Array.from(event.target.files);
-    if (files.length > 0) {
-      const folderPath = files[0].webkitRelativePath.split('/')[0];
-      setFramesFolderPath(folderPath);
-    }
   };
 
   const handleAddModel = () => {
-    if (jsonFile && jsonData && framesFolderPath) {
+    if (jsonFile && jsonData) {
       const newModel = {
         name: modelName,
         jsonFileName: jsonFile.name,
-        framesFolderPath,
+        jsonData, // Include jsonData here
         selected: false,
       };
-      // Store jsonData in ModelDataContext
-      addModelData(modelName, jsonData);
       onAddModel(newModel);
       onClose();
     } else {
-      alert('Please select a JSON file and inference frames folder.');
+      alert('Please select a JSON file.');
     }
   };
 
@@ -64,7 +48,6 @@ const AddModelPopup = ({ isOpen, onClose, onAddModel }) => {
     onClose();
   };
 
-  // Always render the component; control visibility with CSS
   return (
     <div
       className={`fixed inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
@@ -98,20 +81,6 @@ const AddModelPopup = ({ isOpen, onClose, onAddModel }) => {
             className="mt-2"
           />
           {jsonFile && <p>Selected: {jsonFile.name}</p>}
-        </div>
-
-        {/* Frames Folder Selection */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">Inference Frames Folder</label>
-          <input
-            type="file"
-            webkitdirectory=""
-            directory=""
-            multiple
-            onChange={handleFramesFolderChange}
-            className="mt-2"
-          />
-          {framesFolderPath && <p>Selected Folder: {framesFolderPath}</p>}
         </div>
 
         {/* Add Model Button */}
