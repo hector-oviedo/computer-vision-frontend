@@ -7,6 +7,7 @@ import ModelsList from '../components/ModelsList';
 import GaugesSection from '@/components/GaugesSection';
 import ChartComponent from '../components/ChartComponent';
 import FrameComparisonSlider from '../components/FrameComparisonSlider';
+import DetectionsWidget from '../components/DetectionsWidget';
 
 const Home = () => {
   const models = useSelector((state) => state.config.models);
@@ -133,6 +134,18 @@ const Home = () => {
             units="" // Add units if applicable
           />
         </section>
+
+{/* Detections Widget Section */}
+<section className="mt-8">
+          {models.length > 0 && totalFrames > 0 ? (
+            <DetectionsWidget models={models} totalFrames={totalFrames} />
+          ) : (
+            <p className="text-center text-gray-600 dark:text-gray-400">
+              No models or frames available for detection comparison.
+            </p>
+          )}
+        </section>
+
       </main>
     </div>
   );
