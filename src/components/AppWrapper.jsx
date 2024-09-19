@@ -2,29 +2,11 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setSettings } from '../slices/settingsSlice';
-import { setFrames } from '../slices/configSlice';
+import { useSelector } from 'react-redux';
 import { ModelDataProvider } from '../contexts/ModelDataContext';
 
 const AppWrapper = ({ children }) => {
-  const dispatch = useDispatch();
   const { darkMode, textSize } = useSelector((state) => state.settings);
-
-  useEffect(() => {
-    // Load settings from localStorage after the component mounts
-    const savedSettings = JSON.parse(localStorage.getItem('settings'));
-    if (savedSettings) {
-      dispatch(setSettings(savedSettings));
-    }
-
-    // Load frames from localStorage after the component mounts
-    // (Optional if you want to keep frames loading here)
-    const savedFrames = JSON.parse(localStorage.getItem('frames'));
-    if (savedFrames) {
-      dispatch(setFrames(savedFrames));
-    }
-  }, [dispatch]);
 
   useEffect(() => {
     // Apply the 'dark' class to the <html> element

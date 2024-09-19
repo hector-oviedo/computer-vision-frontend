@@ -7,13 +7,17 @@ const DetectionItem = ({ detection }) => {
 
   // Score color: red for low score, green for high score
   const scoreColor = score >= 0.7 ? 'text-green-600' : score >= 0.4 ? 'text-yellow-500' : 'text-red-500';
-
+  const handleClick = () => {
+    console.log(box)
+  };
   return (
     <tr>
       <td className="text-gray-700 dark:text-gray-300">{label}</td>
       <td className={`font-semibold ${scoreColor}`}>{score.toFixed(2)}</td>
       <td>
-        <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
+        <button
+         onClick={handleClick}
+         className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
           Box
         </button>
       </td>

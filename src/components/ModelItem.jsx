@@ -8,23 +8,11 @@ const ModelItem = ({ model }) => {
         <h4 className="text-md font-medium text-gray-800 dark:text-gray-200">
           {model.name}
         </h4>
-        <span
-          className={`px-2 py-1 rounded-full text-xs font-semibold ${
-            model.selected
-              ? 'bg-green-100 text-green-800'
-              : 'bg-red-100 text-red-800'
-          }`}
-        >
-          {model.selected ? 'Selected' : 'Not Selected'}
+        <span className='px-2 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800'>
+          Loaded
         </span>
       </div>
       <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-        <p>
-          <strong>JSON Path:</strong> {model.jsonFilePath}
-        </p>
-        <p>
-          <strong>Frames Folder:</strong> {model.framesFolderPath}
-        </p>
       </div>
     </article>
   );

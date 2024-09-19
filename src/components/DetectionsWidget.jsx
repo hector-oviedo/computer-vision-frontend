@@ -13,6 +13,10 @@ const DetectionsWidget = ({ models, totalFrames }) => {
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow mt-8">
+      <h2 className="text-center text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        Detections in frame {currentFrame}
+      </h2>
+      
       {/* Slider */}
       <input
         type="range"

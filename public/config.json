@@ -1,0 +1,10 @@
+{
+    "rawFramesPath": "/frames",
+    "modelsOutputs": "/output/logs",
+    "modelsInferenceFramesPath": "/output/frames/",
+    "models": [
+        "yolov8xseg",
+        "detectron2",
+        "efficientdet"
+      ]
+}

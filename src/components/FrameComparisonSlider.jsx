@@ -11,6 +11,9 @@ const FrameComparisonSlider = ({ models, totalFrames, getImageUrl, units = '' })
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow mt-8">
+      <h2 className="text-center text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        Visualizing frame {currentFrame}
+      </h2>
       {/* Slider */}
       <input
         type="range"
@@ -35,9 +38,6 @@ const FrameComparisonSlider = ({ models, totalFrames, getImageUrl, units = '' })
               className="w-full h-auto rounded"
               loading="lazy"
             />
-            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-1">
-              Frame {currentFrame} {units}
-            </p>
           </div>
         ))}
       </div>

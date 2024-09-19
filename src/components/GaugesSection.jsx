@@ -13,7 +13,7 @@ const GaugesSection = ({ title, gaugesData }) => {
   return (
     <section className="mt-8">
       {title && (
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+        <h2 className="text-center text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">
           {title}
         </h2>
       )}
