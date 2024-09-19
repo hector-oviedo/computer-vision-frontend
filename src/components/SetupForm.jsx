@@ -29,8 +29,7 @@ const SetupForm = ({ isOpen, onClose }) => {
         {/* Popup title */}
 
         {/* Scrollable content */}
-        <div className="overflow-y-auto h-full w-full">
-          <div className="space-y-6 text-gray-800 dark:text-gray-200">
+        <div className="overflow-y-auto h-full w-full space-y-6 text-gray-800 dark:text-gray-200">
             {/* Project Structure */}
             <div>
               <h2 className="font-bold mb-4 text-center text-2xl">Usage Instructions</h2>
@@ -133,7 +132,6 @@ const SetupForm = ({ isOpen, onClose }) => {
               </ul>
             </div>
           </div>
-        </div>
       </section>
     </div>
   );
