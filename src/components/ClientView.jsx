@@ -26,9 +26,9 @@ const ClientView = () => {
 
 
     // Prepare gauges data
-    const metricName = 'total_inference_time'; // This can be dynamic
+    const metricName = 'total_inference_time_ms'; // This can be dynamic
     const metricLabel = 'Total Inference Time';
-    const units = 'seconds';
+    const units = 'miliseconds';
   
     // Extract the metric values from models
     const metricValues = models.map(
@@ -76,7 +76,7 @@ const ClientView = () => {
       labels = framesData.map((frame) => frame.frame_number + 1); // Adding 1 if frames start from 0
     }
 
-    const data = framesData.map((frame) => frame.inference_time);
+    const data = framesData.map((frame) => frame.inference_time_ms);
 
     chartDatasets.push({
       label: model.name,

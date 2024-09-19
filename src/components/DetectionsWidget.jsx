@@ -28,7 +28,7 @@ const DetectionsWidget = ({ models, totalFrames }) => {
       />
       <div className="flex flex-wrap mt-4">
         {models.map((model, index) => {
-          const frameData = model.jsonData.frames[currentFrame - 1];
+          const frameData = model.jsonData.frames[currentFrame];
           const totalDetections = frameData?.detections.length || 0;
 
           return (
