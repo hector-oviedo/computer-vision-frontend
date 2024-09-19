@@ -28,7 +28,7 @@ const ClientView = () => {
     // Prepare gauges data
     const metricName = 'total_inference_time_ms'; // This can be dynamic
     const metricLabel = 'Total Inference Time';
-    const units = 'miliseconds';
+    const units = 'milliseconds';
   
     // Extract the metric values from models
     const metricValues = models.map(
@@ -37,7 +37,7 @@ const ClientView = () => {
     // Define the min and max values for the gauges
     const minValue = 0;
     const maxValue = Math.max(...metricValues, 100); // Ensure maxValue is at least 100
-  
+
     // Prepare data for gauges
     const gaugesData = models.map((model) => {
       const name = model.name;

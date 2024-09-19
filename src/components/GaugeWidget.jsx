@@ -1,11 +1,13 @@
-// src/components/GaugeWidget.jsx
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const GaugeWidget = ({ name, minValue, maxValue, actualValue, label, units }) => {
   const min = Number(minValue) || 0;
   const max = Number(maxValue) || 100;
   const value = Number(actualValue) || 0;
   const normalizedValue = Math.min(Math.max(value, min), max);
+
+  // State for the formatted value text
+  const [valueText, setValueText] = useState(normalizedValue.toString());
 
   // Calculate the percentage for the gauge
   const percentage = ((normalizedValue - min) / (max - min)) * 100;
@@ -33,6 +35,23 @@ const GaugeWidget = ({ name, minValue, maxValue, actualValue, label, units }) =>
     const green = 255 - red;
     return `rgb(${red}, ${green}, 0)`;
   };
+
+  // Function to convert milliseconds to minutes:seconds format
+  const convertMsToMinSec = (milliseconds) => {
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`; // Adding a leading zero for seconds if needed
+  };
+
+  useEffect(() => {
+    // Logic to format the value text based on units
+    if (units === "milliseconds") {
+      setValueText(convertMsToMinSec(actualValue) + " minutes"); // Format in minutes:seconds if milliseconds
+    } else {
+      setValueText(normalizedValue.toString()); // If not milliseconds, just use normalizedValue
+    }
+  }, [units, actualValue, normalizedValue]); // Dependencies: units, actualValue, and normalizedValue
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow text-center">
@@ -82,7 +101,7 @@ const GaugeWidget = ({ name, minValue, maxValue, actualValue, label, units }) =>
       </div>
       {/* Label */}
       {label && (
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{label}</p>
+        <h4 className="mt-2 text-gray-600 dark:text-gray-400">{label} {valueText}</h4>
       )}
     </div>
   );

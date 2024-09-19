@@ -33,7 +33,7 @@ const InternalConfig = ({ isOpen, onClose }) => {
   return (
     // Background overlay with fade-in effect
     <div
-      className={`fixed inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
+      className={`popup fixed inset-0 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
         isOpen ? 'opacity-100 bg-black bg-opacity-50' : 'opacity-0 pointer-events-none'
       }`}
     >

@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { FiSettings, FiUpload } from 'react-icons/fi';
+import { FiSettings, FiHelpCircle } from 'react-icons/fi';
 import dynamic from 'next/dynamic';
 import SetupForm from './SetupForm';
 import { setFrames, setModels, loadConfigFromLocalStorage } from '../slices/configSlice';
@@ -57,7 +57,7 @@ const Header = () => {
         aria-label="Open Setup Form"
         className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
       >
-        <FiUpload className="w-6 h-6" />
+        <FiHelpCircle className="w-6 h-6" />
       </button>
 
       {/* InternalConfig Popup */}

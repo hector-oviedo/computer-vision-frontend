@@ -1,7 +1,0 @@
-{
-    "models": [
-      "yolov8xseg",
-      "detectron2",
-      "efficientdet"
-    ]
-}
