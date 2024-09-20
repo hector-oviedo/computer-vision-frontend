@@ -7,6 +7,7 @@ import GaugesSection from './GaugesSection';
 import ChartComponent from './ChartComponent';
 import FrameComparisonSlider from './FrameComparisonSlider';
 import DetectionsWidget from './DetectionsWidget';
+import MetricsWidget from './MetricsWidget';
 import getImageUrl from '../utils/getImageUrl';
 
 const ClientView = () => {
@@ -193,6 +194,17 @@ const ClientView = () => {
           ) : (
             <p className="text-center text-gray-600 dark:text-gray-400">
               No models or frames available for detection comparison.
+            </p>
+          )}
+        </section>
+
+        {/* Metrics Widget Section */}
+        <section className="mt-8">
+          {models.length > 0 && totalFrames > 0 ? (
+            <MetricsWidget models={models} totalFrames={totalFrames} />
+          ) : (
+            <p className="text-center text-gray-600 dark:text-gray-400">
+              No models or frames available for metrics display.
             </p>
           )}
         </section>

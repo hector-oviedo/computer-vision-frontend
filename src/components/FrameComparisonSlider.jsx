@@ -17,8 +17,8 @@ const FrameComparisonSlider = ({ models, totalFrames, getImageUrl, units = '' })
       {/* Slider */}
       <input
         type="range"
-        min="1"
-        max={totalFrames}
+        min="0"
+        max={totalFrames-1}
         value={currentFrame}
         onChange={handleSliderChange}
         className="w-full"

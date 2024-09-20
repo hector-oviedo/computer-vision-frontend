@@ -1,5 +1,5 @@
 {
-    "rawFramesPath": "/frames",
+    "rawFramesPath": "data/frames",
     "modelsOutputs": "/output/logs",
     "modelsInferenceFramesPath": "/output/frames/",
     "models": [
