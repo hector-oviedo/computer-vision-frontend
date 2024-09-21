@@ -35,6 +35,7 @@ const DetectionsList = ({ detections, onBoxClick }) => {
 DetectionsList.propTypes = {
   detections: PropTypes.arrayOf(
     PropTypes.shape({
+      model_name:  PropTypes.string,
       label: PropTypes.string.isRequired,
       score: PropTypes.number.isRequired,
       box: PropTypes.array.isRequired, // [x1, y1, x2, y2]

@@ -1,3 +1,4 @@
+// src/components/DetectionsWidget.jsx
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
@@ -28,7 +29,10 @@ const DetectionsWidget = ({ models, totalFrames }) => {
 
     setSelectedDetection({
       imageUrl: rawFrameUrl,
+      label: detection.label,
+      score: detection.score,
       box: detection.box,
+      model_name: model.name, // Correctly store `model.name`
     });
     setIsPopupOpen(true);
   };
@@ -93,6 +97,9 @@ const DetectionsWidget = ({ models, totalFrames }) => {
           onClose={handleClosePopup}
           imageUrl={selectedDetection.imageUrl}
           box={selectedDetection.box}
+          label={selectedDetection.label}
+          score={selectedDetection.score}
+          model_name={selectedDetection.model_name} // Correctly sourced from `selectedDetection`
         />
       )}
     </div>

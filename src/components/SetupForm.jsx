@@ -40,25 +40,25 @@ const SetupForm = ({ isOpen, onClose }) => {
                 <br />
                 └── <FiFile className="inline-block mr-2" />config.json
                 <br />
-                <FiFolder className="inline-block mr-2" />output
+                └── <FiFolder className="inline-block mr-2" />output
                 <br />
-                └── <FiFolder className="inline-block mr-2" />logs
+                &nbsp;&nbsp;&nbsp;&nbsp;└── <FiFolder className="inline-block mr-2" />logs
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />modelname.json
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
-                <br />
-                └── <FiFolder className="inline-block mr-2" />frames
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;└── <FiFolder className="inline-block mr-2" />modelname
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />frame_0000.png
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />frame_0001.png
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />modelname.json
                 <br />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
                 <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                &nbsp;&nbsp;&nbsp;&nbsp;└── <FiFolder className="inline-block mr-2" />frames
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFolder className="inline-block mr-2" />modelname
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />frame_0000.png
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <FiFile className="inline-block mr-2" />frame_0001.png
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
               </pre> <small>Frames should be named as `frame_n.png`, where `n` is the frame number (from 0000 to 9999).</small><br />
             </div>
            
@@ -85,6 +85,9 @@ const SetupForm = ({ isOpen, onClose }) => {
 {`{
   "device": "cuda",
   "model": "modelname",
+  "model_identifier": "model_identifier",
+  "parameters": "0M",
+  "official_site": "site",
   "total_frames": 0000,
   "total_inference_time_ms": 0000.00,
   "total_time_ms": 0000.00,

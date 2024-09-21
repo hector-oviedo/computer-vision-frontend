@@ -8,7 +8,7 @@ const ModelsList = () => {
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
-      <h3 className="text-lg font-semibold mb-4">Models</h3>
+      <h3 className="text-lg font-semibold mb-4 text-center">Models</h3>
       {models && models.length > 0 ? (
         <div className="space-y-4">
           {models.map((model, index) => (

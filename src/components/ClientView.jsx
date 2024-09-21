@@ -57,7 +57,7 @@ const ClientView = () => {
   // Prepare data for the inference time chart
   const chartTitle = 'Inference Time per Frame';
   const xLabel = 'Frame Number';
-  const yLabel = 'Inference Time (seconds)';
+  const yLabel = 'Inference Time (ms)';
 
   const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'];
 
