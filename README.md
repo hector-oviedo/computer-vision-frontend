@@ -104,7 +104,7 @@ Once the setup is complete and the data is copied into the frontend, you can sta
 
 - **Isolated Detection View**: When clicking the detection button, you can see an isolated image of the specific detection with an option to show or hide the detection overlay.
 
-
+![Dashboard Single Detection In Frame - Model](./screenshots/screenshot7.png)
 
 ### 4. System Metrics Comparison
 
