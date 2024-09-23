@@ -140,5 +140,3 @@ You are free to:
 - Use the project for any purpose.
 - Modify the code as needed.
 - Share and distribute it as you see fit.
-
-The full license can be found [here](LICENSE).
