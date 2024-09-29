@@ -140,3 +140,18 @@ You are free to:
 - Use the project for any purpose.
 - Modify the code as needed.
 - Share and distribute it as you see fit.
+
+## Pre-inferenced videos:
+
+Unzip any of this files inside public folder to load pre-inferenced videos.
+
+[Full video](https://drive.google.com/file/d/1qgKx4pmIL_sXzDRYFnMjEyEnUBhTWkth)
+
+[video 1](https://drive.google.com/file/d/1QvgQuUAwEh94AyI51xC1f369CuAJdKwb)
+
+[video 2](https://drive.google.com/file/d/1O4yAd3f6aIJFUneOZQ5-ObfJgu2H4f0O)
+
+[video 3](https://drive.google.com/file/d/1vj8Tk6VncbD3Q9LOWIiexuK95GMmsEk_)
+
+[video 4](https://drive.google.com/file/d/1XNBndtadoUlQEad9a8sCqI3ySX6hod3X)
+
