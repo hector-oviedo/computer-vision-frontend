@@ -155,3 +155,6 @@ Unzip any of this files inside public folder to load pre-inferenced videos.
 
 [video 4](https://drive.google.com/file/d/1XNBndtadoUlQEad9a8sCqI3ySX6hod3X)
 
+## Full video result:
+
+[Full Video](https://youtu.be/ERBKYHhBDN4)
