@@ -9,6 +9,8 @@ import FrameComparisonSlider from './FrameComparisonSlider';
 import DetectionsWidget from './DetectionsWidget';
 import MetricsWidget from './MetricsWidget';
 import getImageUrl from '../utils/getImageUrl';
+import GroundTruthAnnotationWidget from './GroundTruthAnnotationWidget';
+
 
 const ClientView = () => {
   const config = useSelector((state) => state.config.config);
@@ -22,9 +24,7 @@ const ClientView = () => {
     );
   }
 
-  const { rawFramesPath, modelsOutputs, modelsInferenceFramesPath } = config;
   const totalFrames = models.length > 0 ? models[0].jsonData?.total_frames || 0 : 0;
-
 
     // Prepare gauges data
     const metricName = 'total_inference_time_ms'; // This can be dynamic
@@ -41,7 +41,7 @@ const ClientView = () => {
 
     // Prepare data for gauges
     const gaugesData = models.map((model) => {
-      const name = model.name;
+      const name = model.jsonData.model_identifier;
       const actualValue = model.jsonData?.[metricName] || 0;
   
       return {
@@ -80,7 +80,7 @@ const ClientView = () => {
     const data = framesData.map((frame) => frame.inference_time_ms);
 
     chartDatasets.push({
-      label: model.name,
+      label: model.jsonData.model_identifier,
       data,
       borderColor: colors[index % colors.length],
       backgroundColor: colors[index % colors.length],
@@ -105,7 +105,7 @@ const ClientView = () => {
     const detectionsData = framesData.map((frame) => frame.detections.length);
 
     detectionsChartDatasets.push({
-      label: model.name,
+      label: model.jsonData.model_identifier,
       data: detectionsData,
       borderColor: colors[index % colors.length],
       backgroundColor: colors[index % colors.length],
@@ -208,6 +208,22 @@ const ClientView = () => {
             </p>
           )}
         </section>
+
+
+        {
+
+        
+        <section className="mt-8">
+        {totalFrames > 0 ? (
+             <GroundTruthAnnotationWidget totalFrames={totalFrames} config={config} models={models} />
+          ) : (
+            <p className="text-center text-gray-600 dark:text-gray-400">
+              No frames available for metrics display.
+            </p>
+          )}
+          
+        </section>
+        }
       </main>
     </div>
   );

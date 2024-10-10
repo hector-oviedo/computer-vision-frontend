@@ -118,7 +118,25 @@ A set of gauges will display additional metrics for each model, allowing for sid
 
 ![Dashboard - Gauges per Frame](./screenshots/screenshot8.png)
 
-### 5. Configuration
+### 5. Manual Ground Truth Annotation
+The Manual Ground Truth Annotation widget is designed to help users manually annotate features in video segments for false positive ground truth comparisons. This feature is especially useful when automated detection systems produce errors or miss certain objects. Though currently limited in functionality (allowing only verifying false positive), it still provides a powerful usage for refining model performance evaluations by comparing manual annotations with the models' outputs.
+
+How It Works:
+- Range Selection with Slider:
+Allows users to manually select a specific range of frames within the video sequence. A slider lets users define the start and end points of the range to focus on a particular segment for deeper analysis.
+
+- Frame Verification:
+Once the range is selected, users can slide through the frames within that range to visually inspect and verify the objects and features present. This helps ensure that the ground truth is accurately captured.
+
+- Feature Selection from COCO Dataset:
+From a list of features (COCO dataset), users can manually select features they observe in the selected range.
+
+- Analyze False Detections:
+After selecting the range and verifying the features, users can click the "Analyze False Detections" button. This will generate a list of false positives, showing which models made incorrect detections, on which frames, along with the total number of frames and detections involved. This list highlights discrepancies between the models' outputs, facilitating targeted improvements.
+
+![Dashboard - Gauges per Frame](./screenshots/screenshot9.png)
+
+### 6. Configuration
 
 The project includes a configuration button that allows users to change the theme color and text size. This can be accessed through the top-left corner of the application. Additionally, a help button in the top-right corner provides instructions on the required file structure and usage of the dashboard.
 
